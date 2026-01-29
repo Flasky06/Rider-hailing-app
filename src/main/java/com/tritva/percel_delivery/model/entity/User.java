@@ -33,6 +33,13 @@ public class User extends BaseEntity {
     @Column(nullable = false)
     private String password;
 
+    private String verificationToken;
+    private String resetPasswordToken;
+
+    // Using 'active' as 'enabled' for email verification
+    // boolean active is already present (default true), might need logic adjustment
+    // for new users
+
     // Optional: Link to rider profile if this user is a rider
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private Rider riderProfile;

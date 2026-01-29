@@ -5,7 +5,7 @@ import com.tritva.percel_delivery.model.dto.DeliveryResponseDTO;
 import com.tritva.percel_delivery.model.entity.Rider;
 import com.tritva.percel_delivery.model.entity.User;
 import com.tritva.percel_delivery.repository.UserRepository;
-import com.tritva.percel_delivery.services.impl.DeliveryLifecycleService;
+import com.tritva.percel_delivery.services.DeliveryLifecycleService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;

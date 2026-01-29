@@ -127,7 +127,7 @@ org.springframework.dao.DataIntegrityViolationException: not-null property refer
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:325) ~[spring-boot-3.5.10.jar:3.5.10]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.10.jar:3.5.10]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.10.jar:3.5.10]
-	at com.tritva.percel_delivery.PercelDeliveryApplication.main(PercelDeliveryApplication.java:10) ~[classes/:na]
+	at com.tritva.percel_delivery.DataLoader.PercelDeliveryApplication.main(PercelDeliveryApplication.java:10) ~[classes/:na]
 Caused by: org.hibernate.PropertyValueException: not-null property references a null or transient value: com.tritva.percel_delivery.model.entity.User.cellNo
 	at org.hibernate.engine.internal.Nullability.checkNullability(Nullability.java:112) ~[hibernate-core-6.6.41.Final.jar:6.6.41.Final]
 	at org.hibernate.engine.internal.Nullability.checkNullability(Nullability.java:57) ~[hibernate-core-6.6.41.Final.jar:6.6.41.Final]

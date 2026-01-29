@@ -11,6 +11,8 @@ import com.tritva.percel_delivery.repository.DeliveryRequestRepository;
 import com.tritva.percel_delivery.repository.RiderRepository;
 import com.tritva.percel_delivery.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import com.tritva.percel_delivery.services.NotificationService;
+import com.tritva.percel_delivery.services.RiderAssignmentService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,7 +20,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class RiderAssignmentService {
+public class RiderAssignmentServiceImpl implements RiderAssignmentService {
 
     private final RiderRepository riderRepository;
     private final DeliveryRequestRepository deliveryRequestRepository;

@@ -29,6 +29,9 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable) // Disable CSRF for simplicity in API demo
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/h2-console/**").permitAll() // Allow H2 Console
+                        .requestMatchers("/api/v1/auth/**").permitAll() // Allow Auth endpoints (Register, Login, etc)
+                        .requestMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll() // Allow
+                                                                                                              // Swagger
                         .anyRequest().authenticated() // Secure everything else
                 )
                 .headers(headers -> headers.frameOptions(HeadersConfigurer.FrameOptionsConfig::disable)) // Fix H2

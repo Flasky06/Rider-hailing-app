@@ -7,6 +7,8 @@ import com.tritva.percel_delivery.repository.RiderRepository;
 import com.tritva.percel_delivery.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -88,5 +90,14 @@ public class DataLoader implements CommandLineRunner {
 
             System.out.println("Seeded Demo Riders. Creds: (john|jane|doe)@demo.com / password");
         }
+    }
+
+    @SpringBootApplication
+    public static class PercelDeliveryApplication {
+
+        public static void main(String[] args) {
+            SpringApplication.run(PercelDeliveryApplication.class, args);
+        }
+
     }
 }

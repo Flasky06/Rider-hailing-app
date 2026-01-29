@@ -2,7 +2,7 @@ package com.tritva.percel_delivery.controller;
 
 import com.tritva.percel_delivery.model.dto.AuthDTOs;
 import com.tritva.percel_delivery.model.entity.Rider;
-import com.tritva.percel_delivery.services.impl.AuthService;
+import com.tritva.percel_delivery.services.AuthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;

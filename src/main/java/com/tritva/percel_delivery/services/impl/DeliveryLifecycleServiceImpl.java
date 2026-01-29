@@ -9,6 +9,8 @@ import com.tritva.percel_delivery.model.entity.User;
 import com.tritva.percel_delivery.repository.DeliveryRequestRepository;
 import com.tritva.percel_delivery.repository.RiderRepository;
 import lombok.RequiredArgsConstructor;
+import com.tritva.percel_delivery.services.DeliveryLifecycleService;
+import com.tritva.percel_delivery.services.NotificationService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,7 +20,7 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
-public class DeliveryLifecycleService {
+public class DeliveryLifecycleServiceImpl implements DeliveryLifecycleService {
 
     private final DeliveryRequestRepository deliveryRepository;
     private final RiderRepository riderRepository;

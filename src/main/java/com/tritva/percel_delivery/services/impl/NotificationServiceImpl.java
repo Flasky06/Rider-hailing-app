@@ -6,6 +6,7 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import com.tritva.percel_delivery.services.NotificationService;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -14,7 +15,7 @@ import java.util.Map;
 
 @Service
 @Slf4j
-public class NotificationService {
+public class NotificationServiceImpl implements NotificationService {
 
     @Value("${resend.api-key}")
     private String apiKey;
