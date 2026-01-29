@@ -1,15 +1,3 @@
-CREATE TABLE users (
-    id BINARY(16) NOT NULL PRIMARY KEY,
-    created_at TIMESTAMP,
-    updated_at TIMESTAMP,
-    name VARCHAR(255) NOT NULL,
-    role VARCHAR(50) NOT NULL,
-    email VARCHAR(255) NOT NULL UNIQUE,
-    cell_no VARCHAR(255) NOT NULL UNIQUE,
-    password VARCHAR(255) NOT NULL,
-    active BOOLEAN NOT NULL DEFAULT TRUE
-);
-
 CREATE TABLE riders (
     id BINARY(16) NOT NULL PRIMARY KEY,
     created_at TIMESTAMP,
@@ -18,6 +6,8 @@ CREATE TABLE riders (
     available BOOLEAN NOT NULL DEFAULT TRUE,
     deliveries_today INT NOT NULL DEFAULT 0,
     active BOOLEAN NOT NULL DEFAULT TRUE,
+    current_lat DOUBLE,
+    current_lon DOUBLE,
     CONSTRAINT fk_rider_user FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
@@ -26,7 +16,11 @@ CREATE TABLE delivery_requests (
     created_at TIMESTAMP,
     updated_at TIMESTAMP,
     pickup_location VARCHAR(255) NOT NULL,
+    pickup_lat DOUBLE,
+    pickup_lon DOUBLE,
     dropoff_location VARCHAR(255) NOT NULL,
+    dropoff_lat DOUBLE,
+    dropoff_lon DOUBLE,
     status VARCHAR(50) NOT NULL,
     client_id BINARY(16) NOT NULL,
     rider_id BINARY(16),

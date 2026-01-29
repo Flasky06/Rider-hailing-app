@@ -28,10 +28,9 @@ public class RiderAssignmentServiceImpl implements RiderAssignmentService {
     private final UserRepository userRepository;
     private final NotificationService notificationService;
 
+    @Override
     @Transactional
-    public DeliveryResponseDTO requestDelivery(DeliveryRequestDTO requestDTO) {
-        User client = userRepository.findById(requestDTO.getClientId())
-                .orElseThrow(() -> new RuntimeException("Client not found"));
+    public DeliveryResponseDTO requestDelivery(DeliveryRequestDTO requestDTO, User client) {
 
         if (requestDTO.getPickupLat() == null || requestDTO.getPickupLon() == null) {
             throw new RuntimeException("Pickup coordinates are required for assignment");

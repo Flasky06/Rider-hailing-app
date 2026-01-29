@@ -17,8 +17,20 @@ public class DeliveryRequest extends BaseEntity {
     @Column(nullable = false)
     private String pickupLocation;
 
+    @Column
+    private Double pickupLat;
+
+    @Column
+    private Double pickupLon;
+
     @Column(nullable = false)
     private String dropoffLocation;
+
+    @Column
+    private Double dropoffLat;
+
+    @Column
+    private Double dropoffLon;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)

@@ -22,11 +22,6 @@ public class DeliveryController {
     private final DeliveryLifecycleService lifecycleService;
     private final UserRepository userRepository;
 
-    @PostMapping("/request")
-    public ResponseEntity<DeliveryResponseDTO> requestDelivery(@RequestBody DeliveryRequestDTO requestDTO) {
-        return ResponseEntity.ok(riderAssignmentService.requestDelivery(requestDTO));
-    }
-
     @GetMapping("/history")
     public ResponseEntity<List<DeliveryResponseDTO>> getMyHistory(Authentication authentication) {
         String email = authentication.getName();

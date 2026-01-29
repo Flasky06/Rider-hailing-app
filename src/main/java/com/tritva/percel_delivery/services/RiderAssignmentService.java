@@ -4,5 +4,6 @@ import com.tritva.percel_delivery.model.dto.DeliveryRequestDTO;
 import com.tritva.percel_delivery.model.dto.DeliveryResponseDTO;
 
 public interface RiderAssignmentService {
-    DeliveryResponseDTO requestDelivery(DeliveryRequestDTO requestDTO);
+    DeliveryResponseDTO requestDelivery(DeliveryRequestDTO requestDTO,
+            com.tritva.percel_delivery.model.entity.User client);
 }
